@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Version>1.0.0</Version>
+		<Authors>Julio Cesar Bautista Monsalvo</Authors>
+		<Company>JCBM</Company>
+		<Product>EstatusCFDI.Sat</Product>
+		<Description>Librería .NET para consultar el estatus de CFDI a través del servicio del SAT</Description>
+		<PackageId>EstatusCFDI.Sat</PackageId>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<!-- o licencia que uses -->
+		<PackageProjectUrl>https://github.com/tuusuario/estatus-cfdi</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/tuusuario/estatus-cfdi</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>CFDI;SAT;Facturación;México;Consulta</PackageTags>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.ServiceModel.Duplex" Version="6.0.*" />
+		<PackageReference Include="System.ServiceModel.Federation" Version="6.0.*" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.0.*" />
+		<PackageReference Include="System.ServiceModel.NetTcp" Version="6.0.*" />
+		<PackageReference Include="System.ServiceModel.Security" Version="6.0.*" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.*" />
+	</ItemGroup>
+
+</Project>
