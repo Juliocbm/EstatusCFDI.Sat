@@ -8,9 +8,15 @@ namespace EstatusCFDI.Sat.Helpers
 {
     public static class SatQueryBuilder
     {
+        //public static string ConstruirCadenaParams(string rfcEmisor, string rfcReceptor, decimal montoTotal, string uuid)
+        //{
+        //    string totalFormateado = montoTotal.ToString("000000.000000").Replace('.', ',');
+        //    return $"?re={rfcEmisor}&rr={rfcReceptor}&tt={totalFormateado}&id={uuid}";
+        //}
+
         public static string ConstruirCadenaParams(string rfcEmisor, string rfcReceptor, decimal montoTotal, string uuid)
         {
-            string totalFormateado = montoTotal.ToString("000000.000000").Replace('.', ',');
+            string totalFormateado = montoTotal.ToString("#,0.00", System.Globalization.CultureInfo.InvariantCulture);
             return $"?re={rfcEmisor}&rr={rfcReceptor}&tt={totalFormateado}&id={uuid}";
         }
     }
