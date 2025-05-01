@@ -9,11 +9,8 @@ using System.Reflection;
 using System;
 
 [![NuGet](https://img.shields.io/nuget/v/EstatusCFDI.Sat.svg?style=flat-square)](https://www.nuget.org/packages/EstatusCFDI.Sat/)
-
 [![NuGet Downloads](https://img.shields.io/nuget/dt/EstatusCFDI.Sat.svg?style=flat-square)](https://www.nuget.org/packages/EstatusCFDI.Sat/)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-
 [![GitHub stars](https://img.shields.io/github/stars/Juliocbm/EstatusCFDI.Sat?style=flat-square)](https://github.com/Juliocbm/EstatusCFDI.Sat/stargazers)
 
 

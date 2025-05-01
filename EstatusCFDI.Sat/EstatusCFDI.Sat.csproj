@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.0.4</Version>
+		<Version>1.0.6</Version>
 		<Authors>Julio Cesar Bautista Monsalvo</Authors>
 		<Company>JCBM</Company>
 		<Product>EstatusCFDI.Sat</Product>
@@ -24,11 +24,11 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="" />
+		<None Include="..\README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="CHANGELOG.md" Pack="true" PackagePath="" />
+		<None Include="..\CHANGELOG.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 	<ItemGroup>
