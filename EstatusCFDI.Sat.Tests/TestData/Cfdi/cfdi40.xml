@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CFDI 4.0 sintético: RFC de pruebas del SAT y UUID ficticio. No es un comprobante real. -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Serie="PRUEBA" Folio="1" Fecha="2026-10-14T19:46:44" Sello="U2VsbG9EZVBydWViYVNpbnRldGljb0FiQ2QxMjM0" SubTotal="1375.00" Moneda="MXN" Total="1595.00" TipoDeComprobante="I" Exportacion="01" LugarExpedicion="64000">
+  <cfdi:Emisor Rfc="EKU9003173C9" Nombre="ESCUELA KEMPER URGATE" RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="URE180429TM6" Nombre="UNIVERSIDAD ROBOTICA ESPAÑOLA" DomicilioFiscalReceptor="65000" RegimenFiscalReceptor="601" UsoCFDI="G03" />
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="78101800" Cantidad="1" ClaveUnidad="E48" Descripcion="Flete" ValorUnitario="1375.00" Importe="1375.00" ObjetoImp="02" />
+  </cfdi:Conceptos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="766049bd-0000-4000-8000-000000000001" FechaTimbrado="2026-10-14T19:46:50" RfcProvCertif="SAT970701NN3" SelloCFD="U2VsbG9DRkQ=" NoCertificadoSAT="00001000000000000000" SelloSAT="U2VsbG9TQVQ=" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

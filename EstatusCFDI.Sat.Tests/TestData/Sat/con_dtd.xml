@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!DOCTYPE s:Envelope [<!ENTITY x "x">]>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body/></s:Envelope>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CFDI 4.0 sintético con '&' en el RFC del receptor (en XML se escribe &amp;). No es un comprobante real. -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Sello="QW1wZXJzYW5kU2ludGV0aWNvOWdnUjNBPT0=" Total="16799.99" TipoDeComprobante="I">
+  <cfdi:Emisor Rfc="EKU9003173C9" />
+  <cfdi:Receptor Rfc="A&amp;B010101AB1" />
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="11111111-2222-4333-8444-555555555555" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

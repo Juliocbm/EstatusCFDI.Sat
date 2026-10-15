@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CFDI 3.3 sintético: RFC de pruebas del SAT y UUID ficticio. No es un comprobante real. -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="3.3" Fecha="2023-05-10T10:00:00" Sello="T3Ryb1NlbGxvU2ludGV0aWNvWHlaOTg3Ng==" SubTotal="9964.05" Moneda="MXN" Total="11558.1" TipoDeComprobante="I" LugarExpedicion="64000">
+  <cfdi:Emisor Rfc="EKU9003173C9" Nombre="ESCUELA KEMPER URGATE" RegimenFiscal="601" />
+  <cfdi:Receptor Rfc="XAXX010101000" UsoCFDI="G03" />
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="0A1B2C3D-4E5F-4A6B-8C7D-8E9F0A1B2C3D" FechaTimbrado="2023-05-10T10:00:05" RfcProvCertif="SAT970701NN3" SelloCFD="U2VsbG9DRkQ=" NoCertificadoSAT="00001000000000000000" SelloSAT="U2VsbG9TQVQ=" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

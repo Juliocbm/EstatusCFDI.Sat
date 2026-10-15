@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Sello="U2VsbG9EZVBydWViYQ==" Total="100.00">
+  <cfdi:Emisor Rfc="EKU9003173C9" />
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="766049bd-0000-4000-8000-000000000001" />
+  </cfdi:Complemento>
+</cfdi:Comprobante>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE cfdi:Comprobante [<!ENTITY externo SYSTEM "file:///c:/windows/win.ini">]>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" Version="4.0" Total="100.00">
+  <cfdi:Emisor Rfc="&externo;" />
+</cfdi:Comprobante>
