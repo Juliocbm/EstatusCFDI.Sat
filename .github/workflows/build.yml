@@ -1,0 +1,64 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # SourceLink necesita el historial completo
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet restore EstatusCFDI.Sat.sln
+      - run: dotnet build EstatusCFDI.Sat.sln -c Release --no-restore -p:ContinuousIntegrationBuild=true
+      # Las pruebas contra el SAT real (Categoria=Integracion) se omiten en CI: dependen de un servicio externo y de CFDI reales.
+      - run: dotnet test EstatusCFDI.Sat.sln -c Release --no-build --filter "Categoria!=Integracion" --collect:"XPlat Code Coverage"
+
+  publish:
+    needs: build-test
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-latest
+    permissions:
+      id-token: write   # OIDC para NuGet Trusted Publishing (sin API key)
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+      - run: dotnet pack EstatusCFDI.Sat/EstatusCFDI.Sat.csproj -c Release -p:ContinuousIntegrationBuild=true -o ./artifacts
+      # Trusted Publishing: intercambia el token OIDC de GitHub por una API key temporal (1h) de nuget.org.
+      # Requiere una política de Trusted Publishing en nuget.org (Repository Owner=Juliocbm, Repository=EstatusCFDI.Sat, Workflow File=build.yml).
+      - name: NuGet login (OIDC -> API key temporal)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: JCBautistaM
+      # dotnet nuget push NO expande comodines: hay que expandir el glob en el shell
+      # y pasar la ruta real de cada .nupkg (dotnet sube el .snupkg asociado solo).
+      - name: NuGet push
+        shell: bash
+        run: |
+          shopt -s nullglob
+          pkgs=(./artifacts/*.nupkg)
+          if [ ${#pkgs[@]} -eq 0 ]; then
+            echo "::error::No se encontraron paquetes .nupkg en ./artifacts"; ls -la ./artifacts; exit 1
+          fi
+          for pkg in "${pkgs[@]}"; do
+            echo "Publicando $pkg"
+            dotnet nuget push "$pkg" --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          done
