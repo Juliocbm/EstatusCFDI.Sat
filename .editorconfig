@@ -1,0 +1,29 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+trim_trailing_whitespace = true
+
+[*.cs]
+indent_size = 4
+
+# Nullable / calidad
+dotnet_diagnostic.CS8600.severity = warning
+dotnet_diagnostic.CS8602.severity = warning
+dotnet_diagnostic.CS8603.severity = warning
+dotnet_diagnostic.CS8625.severity = warning
+
+# Estilo .NET (en warning por ahora; se endurece en F4)
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_object_initializer = true:suggestion
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_prefer_braces = true:suggestion
+
+[*.{csproj,props,targets,xml}]
+indent_size = 2
+
+[*.{json,yml,yaml}]
+indent_size = 2
